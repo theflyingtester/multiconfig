@@ -57,5 +57,17 @@ for a standard RSA key on your localhost
 For git stuffs
 run exec ssh-agent bash in the terminal, then run the ssh-add command to add the actual key file
 
+apt-get install unattended-upgrades
+
+sudo vim /etc/apt/apt.conf.d/10periodic
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Download-Upgradeable-Packages "1";
+APT::Periodic::AutocleanInterval "7";
+APT::Periodic::Unattended-Upgrade "1";
+
+sudo vim /etc/apt/apt.conf.d/50unattended-upgrades 
+Unattended-Upgrade::Origins-Pattern {
+        "origin=Debian,archive=stable,label=Debian-Security";
+};
 
 
