@@ -1,1 +1,14 @@
 //firewall steps
+
+sudo apt-get install ufw
+
+sudo ufw allow 90
+sudo ufw allow 9443
+
+sudo ufw allow from myIP to any port 22
+
+sudo ufw enable
+
+
+
+
