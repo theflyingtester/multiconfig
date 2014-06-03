@@ -24,5 +24,38 @@ I have a monkey.
 passwd monkey
 //also for root and others :-)
 
+generate das key with puttygen
+vim /home/deploy/.ssh/authorized_keys
+to add that key to the list
+chmod 400 /home/deploy/.ssh/authorized_keys
+chown deploy:deploy /home/deploy -R
+
+use visudo to limit the accounts that can do sudo
+# User privilege specification
+root    ALL=(ALL:ALL) ALL
+monkey  ALL=(ALL:ALL) ALL
+
+comment out other trickery:
+# Allow members of group sudo to execute any command
+#%sudo  ALL=(ALL:ALL) ALL
+
+Configure ssh to prevent password & root logins and lock ssh to particular IPs:
+sudo vim /etc/ssh/sshd_config
+#Add Monkey
+AllowUsers monkey@localhost monkey@127.0.0.1 monkey@9.142.57.50
+
+restart sshd 
+sudo service ssh restart
+
+use ssh -vT monkey@localhost
+for troubleshooting: a -1 means file not found
+
+if this fails try
+ssh-keygen 
+for a standard RSA key on your localhost
+
+For git stuffs
+run exec ssh-agent bash in the terminal, then run the ssh-add command to add the actual key file
+
 
 
