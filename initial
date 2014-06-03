@@ -1,0 +1,28 @@
+//
+Found on plusbryan: myfirstfiveminutes
+
+Tested on Debian Wheezy
+
+//
+
+
+if an authorized_keys file gets clobbered or mis-permissioned, I need to log into the remote terminal to fix it
+ The actual user gets sudo access via an arbitrarily long password and 
+ log in is done with public keys, not passwords.
+ Administration is as simple as keeping the authorized_keys file up-to-date across servers. 
+ Root login over ssh is disabled, 
+ and the actual user can only log in from a defined IP (block).
+
+//Todo: try the IP with VPN etc to make sure gaps are seen before disconnecting any direct terminal
+
+Start here:
+
+Determine which user id you need on your server/client 
+
+I have a monkey.
+
+passwd monkey
+//also for root and others :-)
+
+
+
