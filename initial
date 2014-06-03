@@ -71,4 +71,14 @@ Unattended-Upgrade::Origins-Pattern {
         "origin=Debian,archive=stable,label=Debian-Security";
 };
 
+apt-get install logwatch
+sudo vim /etc/cron.daily/00logwatch
+
+Up Next
 https://github.com/theflyingtester/multiconfig/blob/master/firewall
+and
+https://github.com/theflyingtester/multiconfig/blob/master/vpn
+and
+https://github.com/theflyingtester/multiconfig/blob/master/mail
+
+
